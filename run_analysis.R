@@ -10,19 +10,21 @@ home = getwd();
 ## Set that folder as the working directory
 setwd("./UCI HAR Dataset");
 
-## Load the measurement "X" data from the training and test sets, then combine them into X.
-w <- rep(16, length(colNames));
-X.test <- read.fwf(file="./test/X_test.txt", widths=w, colClasses="numeric", buffersize=100);
-X.train <- read.fwf(file="./train/X_train.txt", widths=w, colClasses="numeric", buffersize=100);
-X=rbind(X.test, X.train);
-
-## Remove the individual sets from memory
-remove("X.test","X.train");
-
 ## Read in the column names for the X data files.  These variable names are stored under "features.txt" from the original data
 colNames <- read.delim("features.txt", sep=" ", header=FALSE, col.names = c("col.num", "variable.name"),
                        stringsAsFactors=FALSE);
 colNames <- colNames$variable.name;
+
+## Load the measurement "X" data from the training and test sets, then combine them into X.
+w <- rep(16, length(colNames));
+X.test <- read.fwf(file="./test/X_test.txt", widths=w, colClasses="numeric", buffersize=100);
+X.train <- read.fwf(file="./train/X_train.txt", widths=w, colClasses="numeric", buffersize=100);
+X <- rbind(X.test, X.train);
+
+## Remove the individual sets from memory
+remove("X.test","X.train");
+
+
 
 ## Add column names to X and keep only those columns that calculate 
 ## the mean or standard deviation of a measurement by searching for those terms with grep
