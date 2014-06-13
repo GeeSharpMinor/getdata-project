@@ -1,7 +1,7 @@
 getdata-project
 ===============
 
-#What Is This?
+##What Is This?
 
 This repository containing code and other files for a course project.  The class is "Getting and Cleaning Data" and is offered through Coursera by Johns Hopkins.
 
@@ -14,7 +14,7 @@ This document!
 
 ###run_analysis.R
 
-This text document contains R script that will download data, extract it, then create a tidy data set.  See the comments in this file for more details.
+This text document contains R script that will download data, extract it, then create a tidy data set.  See the comments in this file for more details.  The data was collected from the accelerometers from the Samsung Galaxy S smartphone.
 
 ###CODEBOOK.rtf
 
