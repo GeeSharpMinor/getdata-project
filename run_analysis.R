@@ -70,8 +70,8 @@ tidy_data <- arrange(tidy_data, subject.id, activity);
 
 ## Go back to the original directory and write out csv tables
 setwd(home);
-write.csv(x=X, file="measurement_data.csv", row.names=FALSE);
-write.csv(x=tidy_data, file="tidy_data.csv", row.names=FALSE);
+write.csv(x=X, file="measurement_data.txt", row.names=FALSE);
+write.csv(x=tidy_data, file="tidy_data.txt", row.names=FALSE);
 
 
 
